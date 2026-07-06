@@ -50,3 +50,7 @@ Tested on [Foundry VTT](https://foundryvtt.com/  "Foundry VTT") version 14.
 
 ## Issues
 Any issues, bugs, or feature requests are always welcome to be reported directly to the [Issue Tracker](https://github.com/averagejoe77/swarm-reanimated/issues  "Issue Tracker")
+
+## Licensing
+
+**Swarms Reanimated** is a module for [Foundry VTT](https://foundryvtt.com/ "Foundry VTT") by Dr.O after original idea by Brunhine and is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
