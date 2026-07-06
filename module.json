@@ -2,7 +2,7 @@
   "id": "swarm-reanimated",
   "title": "Swarms Reanimated",
   "description": "Create proper swarms and animate them across the map.",
-  "version": "14.0.0",
+  "version": "14.0.1",
   "authors": [
     {
       "name": "hunterjoe",
@@ -13,7 +13,7 @@
     "script/main.mjs"
   ],
   "url": "https://github.com/averagejoe77/swarm-reanimated",
-  "download": "https://github.com/averagejoe77/swarm-reanimated/releases/download/14.0.0/module.zip",
+  "download": "https://github.com/averagejoe77/swarm-reanimated/releases/download/14.0.1/module.zip",
   "manifest": "https://github.com/averagejoe77/swarm-reanimated/releases/latest/download/module.json",
   "languages": [
     {
