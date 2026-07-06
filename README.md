@@ -53,4 +53,4 @@ Any issues, bugs, or feature requests are always welcome to be reported directly
 
 ## Licensing
 
-**Swarms Reanimated** is a module for [Foundry VTT](https://foundryvtt.com/ "Foundry VTT") by Dr.O after original idea by Brunhine and is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
+**Swarms Reanimated** is a module for [Foundry VTT](https://foundryvtt.com/ "Foundry VTT") by [Dr.O](https://github.com/oOve/swarm) after original idea by Brunhine and is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
