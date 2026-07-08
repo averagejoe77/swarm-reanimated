@@ -1,3 +1,11 @@
+![Latest Downloads](https://img.shields.io/github/downloads/averagejoe77/swarm-reanimated/latest/total?color=brightgreen&label=Latest%20Downloads)
+![Contributors](https://img.shields.io/github/contributors/averagejoe77/swarm-reanimated?color=brightgreen)
+![Last Commit](https://img.shields.io/github/last-commit/averagejoe77/swarm-reanimated?color=yellowgreen)
+![Forks](https://img.shields.io/github/forks/averagejoe77/swarm-reanimated?color=blue)
+![Stars](https://img.shields.io/github/stars/averagejoe77/swarm-reanimated?color=blue)
+
+![Foundry Version](https://img.shields.io/endpoint?label=Foundry%20VTT%20versions:&url=https://foundryshields.com/version?url=https://raw.githubusercontent.com/averagejoe77/swarm-reanimated/main/module.json)
+
 # Swarm
 Create swarms of monsters and critters that move as one. Rats, bats, ravens, bugs, pretty butterflies or even trolls (who wouldn't want to fight a swarm of trolls?) every token can be made into a swarm.
 
