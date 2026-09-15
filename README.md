@@ -13,7 +13,7 @@ Install by searching for *swarm* in the module browsing tool or manually using t
 Right click any token (or an actors prototype token) and bring up the token config. Click the **Appearance** Tab, and scroll down to the Swarm section. 
 ![image](screenshots/token-config-settings.png)
 - **Enabled** Enable your swarm by checking the box
-- **Above Player Tokens** check this box to have your swarm fly over other tokens/players or leave it unchecked for under. Bats and crows fly over, whereas spiders crawl under.
+- **Token Placement** choose whether the swarm renders **Below Tokens** (default - crawling under other tokens, good for spiders and rats), **Same as Tokens** (level with other tokens), or **Above Tokens** (flying over everything, good for bats and crows).
 - **Swarm Count** is the number of critters in your swarm
 - **Swarm Movement Speed** lets you configure the critters individual speeds. Are they moving too fast, reduce this number.
 - **Swarm Grid Size** allows you to set a bounding box in which the swarm moves around. It will default to the token's grid size bounding box if left blank.
@@ -34,7 +34,7 @@ Set the token's grid size to 2x2 and the scale slider to 1
 
 # Swarm Settings
 - Enable the swarm in the **Swarm** settings
-- Set it to be above players (as flies can be above players)
+- Set the **Token Placement** to **Above Tokens** (as flies can fly above players)
 - Define a count to display around the giant fly boss
 - Set the speed
 - Choose the Animation (skitter works best for flies)

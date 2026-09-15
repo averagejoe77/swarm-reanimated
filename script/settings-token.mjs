@@ -9,7 +9,9 @@ import {
     SWARM_FOLLOW_TOKEN_FLAG,
     ANIM_TYPE_FLAG,
     ANIM_TYPES,
-    OVER_FLAG,
+    PLACEMENT_FLAG,
+    PLACEMENT_OPTIONS,
+    getSwarmPlacement,
     lang
 } from "./constants.mjs";
 
@@ -37,11 +39,11 @@ function numberGroup(app, flag_name, label, { placeholder = null, defaultValue =
     return foundry.applications.fields.createFormGroup({ rootId: app.id, label, hint, input });
 }
 
-function selectGroup(app, flag_name, label, values, hint) {
+function selectGroup(app, flag_name, label, values, hint, { value, options } = {}) {
     const input = foundry.applications.fields.createSelectInput({
         name: flagName(flag_name),
-        value: app.token.getFlag(MOD_NAME, flag_name),
-        options: values.map(v => ({ value: v, label: v }))
+        value: value !== undefined ? value : app.token.getFlag(MOD_NAME, flag_name),
+        options: options ?? values.map(v => ({ value: v, label: v }))
     });
     return foundry.applications.fields.createFormGroup({ rootId: app.id, label, hint, input });
 }
@@ -66,7 +68,10 @@ Hooks.on("renderTokenConfig", (app, html) => {
     fieldset.append(legend);
 
     fieldset.append(checkboxGroup(app, SWARM_FLAG, "Enabled", lang("settings.enabled")));
-    fieldset.append(checkboxGroup(app, OVER_FLAG, "Above Player Tokens", lang("settings.above")));
+    fieldset.append(selectGroup(app, PLACEMENT_FLAG, "Token Placement", PLACEMENT_OPTIONS, lang("settings.placement"), {
+        value: getSwarmPlacement(app.token),
+        options: PLACEMENT_OPTIONS.map(v => ({ value: v, label: lang(`placementOptions.${v}`) }))
+    }));
     fieldset.append(numberGroup(app, SWARM_SIZE_FLAG, "Swarm Count",
         { placeholder: 20, defaultValue: 20, step: 1, hint: lang("settings.count") }));
     fieldset.append(numberGroup(app, SWARM_SPEED_FLAG, "Swarm Movement Speed",

@@ -3,7 +3,7 @@
     "SWARM-REANIMATED.description"  : "Module that animates swarms of tokens.",
     "SWARM-REANIMATED.settings"     : {
         "enabled": "Turns this the token into an animated swarm.",
-        "above": "Places the swarm above player tokens.",
+        "placement": "Controls whether the swarm renders below, level with, or above other tokens on the map.",
         "count": "Maximum number of sprites in the swarm.",
         "movement": "Relative movement speed of the swarm (higher numbers means they move faster).",
         "gridSize": "Size of the swarm, in grid squares, that the swarm roams inside of. Defaults to the token's own size if left blank.",
@@ -11,5 +11,10 @@
         "animation": "The pattern used by the swarm as they move across the map.",
         "tokenScale": "If checked, swarm sprites will match the token's own size set in the token Appearance Scale slider. If unchecked, sprites use the Swarm Sprite Scale field below instead.",
         "spriteScale": "Independent sprite scale for each swarm sprite. This is used only when 'Use Token Scale' setting above is unchecked."
+    },
+    "SWARM-REANIMATED.placementOptions": {
+        "below": "Below Tokens",
+        "same": "Same as Tokens",
+        "above": "Above Tokens"
     }
 }

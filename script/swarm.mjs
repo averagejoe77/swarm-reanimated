@@ -13,7 +13,9 @@ import {
     ANIM_TYPE_SKITTER,
     ANIM_TYPE_STOPNMOVE,
     ANIM_TYPE_FORMATION_SQUARE,
-    OVER_FLAG,
+    PLACEMENT_SAME,
+    PLACEMENT_ABOVE,
+    getSwarmPlacement,
     SETTING_HP_REDUCE,
     SETTING_HP_REDUCE_ATTRIBUTE_VALUE,
     SETTING_HP_REDUCE_ATTRIBUTE_MAX,
@@ -102,8 +104,25 @@ export default class Swarm {
         this.visible = (this.faded) ? 0 : this.number;
 
 
-        this.layer.elevation = (token.document.getFlag(MOD_NAME, OVER_FLAG) ? 10000 : 0);
-        this.layer.sort = 120; // Above tiles at 100
+        // PrimaryCanvasGroup sorts by elevation first, then by this sortLayer tier (SCENE < TILES < TOKENS),
+        // and only falls back to `sort` within the same tier. A plain PIXI.Container defaults to sortLayer 0
+        // (SCENE), which put the swarm below every tile and token at equal elevation - rendering it fully
+        // hidden beneath its own token's art. Grouping it with the TOKENS tier keeps it above tiles no matter
+        // which of the three placements below is chosen.
+        const placement = getSwarmPlacement(token.document);
+        this.layer.sortLayer = canvas.primary.constructor.SORT_LAYERS.TOKENS;
+        if (placement === PLACEMENT_ABOVE) {
+            // Elevation is compared before sortLayer/sort, so a large elevation guarantees the swarm
+            // renders above every token regardless of their individual sort values.
+            this.layer.elevation = 10000;
+            this.layer.sort = token.document.sort;
+        } else {
+            this.layer.elevation = 0;
+            // Same as Tokens ties with the owning token's own sort so it draws alongside it like any
+            // other token would. Below Tokens uses a sort lower than any normal token can reach, while
+            // staying in the TOKENS tier so it still renders above tiles/the background.
+            this.layer.sort = (placement === PLACEMENT_SAME) ? token.document.sort : -Infinity;
+        }
         canvas.primary.addChild(this.layer);
 
         this.created = false;
